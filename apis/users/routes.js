@@ -1,6 +1,6 @@
 const express = require("express");
 const passport = require("passport");
-const { signup, signin } = require("./users.controllers");
+const { signup, signin } = require("./controllers");
 
 // Create a mini express application
 const router = express.Router();

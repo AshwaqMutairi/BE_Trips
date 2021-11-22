@@ -24,6 +24,7 @@ exports.tripDetailFetch = async (req, res, next) => {
   res.status(200).json(req.trip);
 };
 
+//creat
 exports.TripCreate = async (req, res, next) => {
   try {
     if (req.file) {

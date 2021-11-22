@@ -3,7 +3,7 @@ const mongooseSlugPlugin = require("mongoose-slug-plugin");
 
 const TripSchema = new mongoose.Schema(
   {
-    id: Number,
+    // id: Number,
     title: String,
     slug: String,
 
