@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.13"
+  },
+  "name": "BE_Trips",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": "git@github.com:AshwaqMutairi/BE_Trips.git",
+  "author": "<ashkhmu@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon app.js"
+  }
+}
