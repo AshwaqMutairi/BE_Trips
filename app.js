@@ -2,8 +2,15 @@ const express = require("express");
 const cors = require("cors");
 const trips = require("./trips");
 const path = require("path");
+const passport = require("passport");
+const { localStrategy } = require("./middleware/passport");
+const logger = require("./middleware/logger");
+const morgan = require("assert");
+const jwtStrategy = require("assert");
 
 const connectDb = require("./db/database");
+const { errorHandler } = require("./middleware/errorHandler");
+
 const PORT = 8001;
 
 // // Routes
@@ -18,14 +25,14 @@ connectDb();
 
 // Middleware
 app.use(cors());
-// app.use(express.json());
+app.use(express.json());
 // app.use(morgan("dev"));
-// app.use(logger);
-app.use((req, res, next) => {
-  if (req.body.name === "Broccoli Soup")
-    res.status(400).json({ message: "I HATE BROCCOLI!! KEEFY! " });
-  else next();
-});
+app.use(logger);
+
+// Passport
+app.use(passport.initialize());
+passport.use(localStrategy);
+passport.use(jwtStrategy);
 
 // app.use("/api/trips", tripRoutes);
 app.use("/api", userRoutes);

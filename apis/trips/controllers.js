@@ -25,7 +25,7 @@ exports.tripDetailFetch = async (req, res, next) => {
 };
 
 //creat
-exports.TripCreate = async (req, res, next) => {
+exports.tripCreate = async (req, res, next) => {
   try {
     if (req.file) {
       // /media/imagename.jpg

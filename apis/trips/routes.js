@@ -1,12 +1,12 @@
 const express = require("express");
 const upload = require("../../middleware/multer");
 const {
-  TripListFetch,
-  TripCreate,
-  TripDelete,
-  TripUpdate,
-  TripDetailFetch,
   fetchTrip,
+  tripListFetch,
+  tripDetailFetch,
+  tripCreate,
+  tripUpdate,
+  tripDelete,
 } = require("./controllers");
 const router = express.Router();
 
@@ -20,6 +20,8 @@ router.param("tripId", async (req, res, next, tripId) => {
     next({ status: 404, message: "Trip Not Found!" });
   }
 });
+
+router.post("/trips", tripCreate);
 
 router.get("/", tripListFetch);
 
